@@ -11,20 +11,20 @@ import kotlinx.coroutines.channels.produce
 class CatalogViewModel : ViewModel() {
     private val backgroundWorkScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
     private val _LiveData: MutableLiveData<List<MoshiClass.Team>> = MutableLiveData()
-    private val _MapLiveData: MutableLiveData<Map<String?, String?>> = MutableLiveData()
+    private val _MapLiveData: MutableLiveData<List<MoshiClass.Team>> = MutableLiveData()
 
     val LiveData: LiveData<List<MoshiClass.Team>>
         get() = _LiveData
-    val MapLiveData: LiveData<Map<String?, String?>>
+    val MapLiveData: LiveData<List<MoshiClass.Team>>
         get() = _MapLiveData
 
     init {
-        triggerCatalogFetch()
-        println("triggerCatalogFetch")
+        triggerTeamsFetch()
+        println("triggerTeamsFetch")
     }
 
-    fun triggerCatalogFetch() {
-        println("inside triggerCatalogFetch")
+    fun triggerTeamsFetch() {
+        println("inside triggerTeamsFetch")
         backgroundWorkScope.launch(Dispatchers.IO) {
 
 
@@ -33,14 +33,10 @@ class CatalogViewModel : ViewModel() {
             }
 
             withContext(Dispatchers.Main) {
-                for (i in 0 until dataDetails!!.size)
-                { _MapLiveData.value = mutableMapOf(dataDetails!![i].Team to dataDetails!![i].Stadium).apply {
-                    _MapLiveData.value?.let { map ->
-                        this.putAll(map)
-                    }
-                }}
-                }
-//            }
+                _MapLiveData.value = dataDetails
+
+            }
+
         }
     }
 

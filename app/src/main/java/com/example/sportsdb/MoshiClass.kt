@@ -94,6 +94,13 @@ class MoshiClass() {
         @Json(name = "strDescriptionEN") var Description: String? = null,
         @Json(name = "strTeamBanner") var Banner: String? = null,
         @Json(name = "strTeamShort") var TeamShort: String? = null,
-        @Json(name = "strTeamBadge") var TeamBadge: String? = null
-    )
+        @Json(name = "strTeamBadge") var TeamBadge: String? = null,
+        @Json(name = "strManager") var Manager: String? = null,
+        @Json(name = "strTeamLogo") var TeamLogo: String? = null,
+        @Json(name = "strStadiumThumb") var StadiumThumb: String? = null,
+        @Json(name = "strStadiumDescription") var StadiumDescription: String? = null,
+        @Json(name = "strStadiumLocation") var StadiumLocation: String? = null,
+        @Json(name = "intStadiumCapacity") var StadiumCapacity: String? = null,
+        @Json(name = "strWebsite") var Website: String? = null
+        )
 }

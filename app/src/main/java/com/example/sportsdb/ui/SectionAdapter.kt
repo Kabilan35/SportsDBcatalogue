@@ -1,7 +1,6 @@
 package com.example.sportsdb.ui
 
-import android.content.Intent
-import android.os.Bundle
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,8 +36,8 @@ class SectionAdapter(val Items: List<MoshiClass.Team>) : RecyclerView.Adapter<It
         holder.imageView.setOnClickListener(View.OnClickListener {
             println("Clicked $TeamInfo.Team")
         })
-
     }
+
     }
 
 class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {

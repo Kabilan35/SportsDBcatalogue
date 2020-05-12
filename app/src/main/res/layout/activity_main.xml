@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
-            android:focusable="auto">
+            android:focusable="true">
 
         </SearchView>
 
@@ -39,4 +39,9 @@
         layout="@layout/catalog_fragment"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
+
+    <include
+        layout="@layout/desc_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 </LinearLayout>
